@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getTodos, postTodo } from "../api/todos";
 import TodoItem from "./TodoItem";
-import {Navigate} from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
-import  styled  from '@emotion/styled'
+import styled from "@emotion/styled";
 
 const Todo = () => {
   const [todoList, setTodoList] = useState([]);
@@ -24,10 +24,11 @@ const Todo = () => {
 
   useEffect(() => {
     didMount();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const userInfo  = localStorage.getItem('access_token')
-  if(!userInfo){
+  const userInfo = localStorage.getItem("access_token");
+  if (!userInfo) {
     return <Navigate to="/signin" />;
   }
 
@@ -71,51 +72,48 @@ const Todo = () => {
 
 export default Todo;
 
-
 const Wrap = styled.div`
-  h1{
+  h1 {
     color: #4461f2;
     font-weight: 400;
-    margin-bottom:50px;
+    margin-bottom: 50px;
   }
-  height:100vh;
-  display:flex;
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #F8F8F8;;
+  background-color: #f8f8f8;
 
-  ul{
+  ul {
     width: 400px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding:0;
-    
+    padding: 0;
   }
-  .new-todo-input{
+  .new-todo-input {
     height: 30px;
-    display:flex;
-    
-    input{
+    display: flex;
+
+    input {
       width: 300px;
       height: 100%;
       padding: 14px 20px 14px 14px;
-      background: #E5E5E7;
+      background: #e5e5e7;
       border-radius: 10px;
-      border:none;
+      border: none;
       outline: none;
     }
-    button{
+    button {
       height: 56px;
       border: none;
       background-color: #4461f2;
-      color:#fff;
-      border-radius:10px;
-      margin-left:12px;
-      width:65px;
+      color: #fff;
+      border-radius: 10px;
+      margin-left: 12px;
+      width: 65px;
       font-weight: bold;
-
     }
   }
-`
+`;
