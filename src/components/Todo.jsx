@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getTodos, postTodo } from "../api/todos";
 import TodoItem from "./TodoItem";
-import { Navigate } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
@@ -26,11 +25,6 @@ const Todo = () => {
     didMount();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const userInfo = localStorage.getItem("access_token");
-  if (!userInfo) {
-    return <Navigate to="/signin" />;
-  }
 
   const handleSubmitTodo = async () => {
     try {

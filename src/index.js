@@ -1,29 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
-import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
-import Todo from './components/Todo';
-import AuthRoute from './components/AuthRoute'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
+import SignUpPage from "./page/SignUpPage";
+import SignInPage from "./page/SignInPage";
+import TodoPage from "./page/TodoPage";
+import AuthRoute from "./components/AuthRoute";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path={"/"} element={<App/>}/>
-      <Route path={"/signup"} element={<SignUp/>}/>
-      <Route path={"/signin"} element={<SignIn/>}/>
-      <Route exact path='/todo' element={<AuthRoute/>}>
-        <Route exact path='/todo' element={<Todo/>}/>
+      <Route path={"/"} element={<App />} />
+      <Route path={"/signup"} element={<SignUpPage />} />
+      <Route path={"/signin"} element={<SignInPage />} />
+      <Route exact path="/todo" element={<AuthRoute />}>
+        <Route exact path="/todo" element={<TodoPage />} />
       </Route>
     </Routes>
   </BrowserRouter>
