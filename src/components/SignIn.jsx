@@ -36,8 +36,9 @@ const SignIn = () => {
       if (data.status === 200) {
         localStorage.setItem("access_token", data.data.access_token);
         navigate("/todo");
+      } else if (data.statusCode === 400 || data.status !== 201) {
+        alert("이메일 또는 비밀번호를 다시 확인해주세요");
       }
-      console.log(data);
     } catch (e) {
       console.error(e);
     }

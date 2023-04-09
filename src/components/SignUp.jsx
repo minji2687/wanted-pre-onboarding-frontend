@@ -34,9 +34,11 @@ const SignUp = () => {
       });
       if (data.status === 201) {
         navigate("/signin");
+      } else if (data.statusCode === 400 || data.status !== 201) {
+        alert(data.message);
       }
     } catch (e) {
-      console.error(e);
+      console.log(e);
     }
   };
 
