@@ -7,7 +7,6 @@ const TodoPage = () => {
   if (!userInfo) {
     return <Navigate to="/signin" />;
   }
-
   return <Todo />;
 };
 
