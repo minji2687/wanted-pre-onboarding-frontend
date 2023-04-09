@@ -4,4 +4,8 @@
 
 ### 프로젝트의 실행 방법
 
-npm run start
+npm install & npm start
+
+### 배포링크
+
+https://voluble-sable-4915eb.netlify.app/signup
