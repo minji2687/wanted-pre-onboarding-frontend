@@ -50,6 +50,7 @@ const SignUp = () => {
           <input
             data-testid="email-input"
             name="email"
+            placeholder="email"
             value={signUpInfo.email}
             onChange={handleChange}
             className="email-input"
@@ -57,6 +58,7 @@ const SignUp = () => {
           <input
             data-testid="password-input"
             name="password"
+            placeholder="pw"
             value={signUpInfo.password}
             onChange={handleChange}
             className="password-input"

@@ -50,6 +50,7 @@ const SignIn = () => {
           <h1 className="header-text">Login</h1>
           <input
             data-testid="email-input"
+            placeholder="email"
             name="email"
             value={userInfo.email}
             onChange={handleChange}
@@ -57,6 +58,7 @@ const SignIn = () => {
           />
           <input
             data-testid="password-input"
+            placeholder="pw"
             name="password"
             value={userInfo.password}
             onChange={handleChange}
