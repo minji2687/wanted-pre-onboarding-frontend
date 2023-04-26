@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.10.6"
+    "@emotion/babel-plugin": "^11.10.6",
+    "jest": "^27.5.1"
   }
 }
