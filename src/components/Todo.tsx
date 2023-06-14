@@ -21,7 +21,7 @@ const Todo = () => {
   });
 
   const didMount = async () => {
-    const { data } = await getTodos();
+    const { data }: any = await getTodos();
     setTodoList(data);
     setLastTodoId(data[data.length - 1]);
     setNewTodo({ ...newTodo, todo: "" });
@@ -36,7 +36,7 @@ const Todo = () => {
     try {
       const data = await postTodo(newTodo);
       console.log(data);
-      if (data.status === 201) {
+      if (data!.status === 201) {
         didMount();
       }
     } catch (e) {
@@ -44,7 +44,7 @@ const Todo = () => {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewTodo({ ...newTodo, todo: e.target.value });
   };
 
