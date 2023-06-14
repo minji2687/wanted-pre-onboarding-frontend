@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import { updateTodo, deleteTodo } from "../api/todos";
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
+import { TodoType } from "./Todo";
 
-const TodoItem = ({ todo, reload }) => {
-  const [mode, setMode] = useState("read");
+type Props = {
+  todo: TodoType;
+  reload: () => void;
+};
+
+const TodoItem = ({ todo, reload }: Props) => {
+  const [mode, setMode] = useState<"read" | "update">("read");
   const [updateInputValue, setUpdateInputValue] = useState("");
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -13,7 +19,7 @@ const TodoItem = ({ todo, reload }) => {
     setIsCompleted(todo.isCompleted);
   }, [todo]);
 
-  const handleChangeMode = (mode) => {
+  const handleChangeMode = (mode: "read" | "update") => {
     setMode(mode);
   };
 
@@ -27,7 +33,7 @@ const TodoItem = ({ todo, reload }) => {
     setMode("read");
   };
 
-  const handleUpdateInput = (e) => {
+  const handleUpdateInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUpdateInputValue(e.target.value);
   };
 
@@ -36,7 +42,7 @@ const TodoItem = ({ todo, reload }) => {
     reload();
   };
 
-  const handleCheckbox = (e) => {
+  const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked;
     setIsCompleted(isChecked);
   };

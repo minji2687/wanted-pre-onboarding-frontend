@@ -4,10 +4,16 @@ import TodoItem from "./TodoItem";
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
+export type TodoType = {
+  id: number;
+  todo: string;
+  isCompleted: boolean;
+  userId: number;
+};
 const Todo = () => {
-  const [todoList, setTodoList] = useState([]);
-  const [lastTodoId, setLastTodoId] = useState(0);
-  const [newTodo, setNewTodo] = useState({
+  const [todoList, setTodoList] = useState<TodoType[]>([]);
+  const [lastTodoId, setLastTodoId] = useState<number>(0);
+  const [newTodo, setNewTodo] = useState<TodoType>({
     id: lastTodoId,
     todo: "",
     isCompleted: false,

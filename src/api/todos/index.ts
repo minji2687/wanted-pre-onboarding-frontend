@@ -1,4 +1,5 @@
 import http from "..";
+import { TodoType } from "../../components/Todo";
 
 export const getTodos = async () => {
   try {
@@ -9,7 +10,7 @@ export const getTodos = async () => {
   }
 };
 
-export const postTodo = async (todoObj) => {
+export const postTodo = async (todoObj: TodoType) => {
   try {
     const data = await http.post("/todos", todoObj);
     return data;
@@ -18,7 +19,7 @@ export const postTodo = async (todoObj) => {
   }
 };
 
-export const deleteTodo = async (id) => {
+export const deleteTodo = async (id: number) => {
   try {
     const data = await http.delete(`/todos/${id}`);
     return data;
@@ -27,7 +28,10 @@ export const deleteTodo = async (id) => {
   }
 };
 
-export const updateTodo = async (id, updateBody) => {
+export const updateTodo = async (
+  id: number,
+  updateBody: { todo: string; isCompleted: boolean }
+) => {
   try {
     const data = await http.put(`/todos/${id}`, updateBody);
     return data;
